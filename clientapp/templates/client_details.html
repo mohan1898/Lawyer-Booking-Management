@@ -1,0 +1,57 @@
+{% include 'client_header.html'%}
+{% load static %}
+
+
+ <body>
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	     <div class="container">
+	      <a class="navbar-brand" href="{% url 'client_home' %}" style="font-size:30px">Lawyer Booking System</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="{% url 'client_home' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="{% url 'client_details' %}" class="nav-link">Client Details</a></li>
+	          <li class="nav-item"><a href="{% url 'client_lawyers' %}" class="nav-link">Lawyers</a></li>
+                <li class="nav-item"><a href="{% url 'booked' %}" class="nav-link">Booked</a></li>
+				<li class="nav-item"><a href="/client_change_password/" class="nav-link">Change Password</a></li>
+	          <li class="nav-item"><a href="{% url 'client_logout' %}" class="nav-link">logout</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+ </body>
+<br>
+<center><h2>My Details</h2></center>
+	 <table  border="1" cellpadding="10" cellspacing="10" width="100%">
+         <thead>
+         <tr>
+             <th>id</th>
+             <th>fullname</th>
+             <th>email</th>
+             <th>mobile</th>
+             <th>city</th>
+             <th>address</th>
+             <th>Edit</th>
+             <th>Delete</th>
+         </tr>
+         </thead>
+         <tbody>
+         <tr>
+             <th>{{client.id}}</th>
+             <th>{{client.full_name}}</th>
+             <th>{{client.email}}</th>
+             <th>{{client.mobile}}</th>
+             <th>{{client.city}}</th>
+             <th>{{client.address}}</th>
+             <th><a href="/client_edit/{{client.email}}">edit</a></th>
+             <th><a href="/client_delete/{{client.email}}">delete</a></th>
+         </tr>
+
+         </tbody>
+     </table>
+<br>
+ {% include 'client_footer.html' %}

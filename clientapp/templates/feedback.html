@@ -1,0 +1,77 @@
+{% include 'client_header.html'%}
+{% load static %}
+
+
+ <body>
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	     <div class="container">
+	      <a class="navbar-brand" href="/" style="font-size:30px">Lawyer Booking System</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="{% url 'client_home' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="{% url 'client_details' %}" class="nav-link">Client Details</a></li>
+	          <li class="nav-item"><a href="{% url 'client_lawyers' %}" class="nav-link">Lawyers</a></li>
+				<li class="nav-item"><a href="{% url 'booked' %}" class="nav-link">Booked</a></li>
+				<li class="nav-item"><a href="/client_change_password/" class="nav-link">Change Password</a></li>
+	          <li class="nav-item"><a href="{% url 'client_logout' %}" class="nav-link">logout</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+ </body>
+	  <div class="row no-gutters">
+								<div class="col-md-7">
+									<div class="contact-wrap w-100 p-md-5 p-4">
+										<h3 class="mb-4">Feedback </h3>
+										<form method="POST" action="" id="contactForm" name="contactForm" class="contactForm">
+											<div class="row">
+												<div class="col-md-6">
+													{% csrf_token %}
+													<div class="form-group">
+														<label class="label" for="client">client</label>
+														<input type="email" class="form-control" name="client" value="{{client}}" id="client" readonly>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="label" for="lawyer">lawyer </label>
+														<input type="email" class="form-control" name="lawyer" value="{{book}}" id="lawyer" readonly>
+													</div>
+												</div>
+
+												<div class="col-md-12">
+													<div class="form-group">
+														<label class="label" for="description">Description</label>
+														<textarea name="description" class="form-control" id="description" cols="30" rows="4" placeholder="description...."></textarea>
+													</div>
+												</div>
+												<div class="row form-group">
+													  <label class="font-weight-bold" for="rating">rating</label>
+												<select id="rating" name="rating" class="selector from-control from-control-lg" required>
+													<option value="1" selected="selected">1★</option>
+													<option value="2" >2★</option>
+													<option value="3" >3★</option>
+													<option value="4" >4★</option>
+													<option value="5" >5★</option>
+												</select>
+											  </div>
+												<div class="col-md-12">
+													<div class="form-group">
+														<input type="submit" value="Feedback" class="btn btn-primary">
+														<div class="submitting"></div>
+														{{msg}}
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+
+							</div>
+ {% include 'client_footer.html' %}
+

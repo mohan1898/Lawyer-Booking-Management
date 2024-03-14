@@ -1,0 +1,60 @@
+{% include 'client_header.html'%}
+{% load static %}
+
+
+ <body>
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	     <div class="container">
+	      <a class="navbar-brand" href="{% url 'client_home' %}" style="font-size:30px">Lawyer Booking System</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="{% url 'client_home' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="{% url 'client_details' %}" class="nav-link">Client Details</a></li>
+	          <li class="nav-item"><a href="{% url 'client_lawyers' %}" class="nav-link">Lawyers</a></li>
+                <li class="nav-item"><a href="{% url 'booked' %}" class="nav-link">Booked</a></li>
+				<li class="nav-item"><a href="{% url 'client_change_password' %}" class="nav-link">Change Password</a></li>
+	          <li class="nav-item"><a href="{% url 'client_logout' %}" class="nav-link">logout</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+ </body>
+<br>
+<table  border="1" cellpadding="10" cellspacing="10" width="100%">
+         <thead>
+         <tr>
+             <th>suffix</th>
+             <th>fullname</th>
+             <th>email</th>
+             <th>mobile</th>
+             <th>city</th>
+             <th>specialization</th>
+             <th>experience</th>
+             <th>current</th>
+             <th>image</th>
+         </tr>
+         </thead>
+         <tbody>
+         {% for lawyer in lawyers %}
+            <tr>
+             <td>{{lawyer.suffix}}</td>
+             <td>{{lawyer.full_name}}</td>
+             <td>{{lawyer.email}}</td>
+             <td>{{lawyer.mobile}}</td>
+             <td>{{lawyer.city}}</td>
+             <td>{{lawyer.specialization}}</td>
+             <td>{{lawyer.experience}}</td>
+             <td>{{lawyer.current}}</td>
+             <td><img src="{{lawyer.image.url}}" height="100px" width="100px" class="img-responsive"></td>
+                <td><a href="/book_lawyer/{{lawyer.email}}">Book Lawyer</a></td>
+			 </tr>
+         {% endfor %}
+		 </tbody>
+</table>
+<br>
+ {% include 'client_footer.html' %}

@@ -1,0 +1,62 @@
+{% include 'lawyer_header.html'%}
+{% load static %}
+
+
+ <body>
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	     <div class="container">
+	      <a class="navbar-brand" href="{% url 'lawyer_home' %}" style="font-size:30px">Lawyer Booking System</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="{% url 'lawyer_home' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="{% url 'lawyer_details' %}" class="nav-link">Lawyer Details</a></li>
+                <li class="nav-item"><a href="{% url 'client_feedback' %}" class="nav-link">Client Feedback</a></li>
+                <li class="nav-item"><a href="{% url 'lawyer_change_password' %}" class="nav-link">Change Password</a></li>
+	          <li class="nav-item"><a href="{% url 'lawyer_logout' %}" class="nav-link">logout</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+ </body>
+<br>
+	 <table  border="1" cellpadding="10" cellspacing="10" width="100%">
+         <thead>
+         <tr>
+
+             <th>suffix</th>
+             <th>fullname</th>
+             <th>email</th>
+             <th>mobile</th>
+             <th>city</th>
+             <th>specialization</th>
+             <th>experience</th>
+             <th>current</th>
+             <th>image</th>
+         </tr>
+         </thead>
+         <tbody>
+         <tr>
+
+             <th>{{lawyer.suffix}}</th>
+             <th>{{lawyer.full_name}}</th>
+             <th>{{lawyer.email}}</th>
+             <th>{{lawyer.mobile}}</th>
+             <th>{{lawyer.city}}</th>
+             <th>{{lawyer.specialization}}</th>
+             <th>{{lawyer.experience}}</th>
+             <th>{{lawyer.current}}</th>
+             <th><img src="{{lawyer.image.url}}" width="50px" height="100px" class="img-responsive"></th>
+             <th class="nav-item"><a href="/view_booking/{{lawyer.email}}" class="nav-link">View Booking</a></th>
+             <th><a href="/lawyer_edit/{{lawyer.email}}">edit</a> </th>
+             <th><a href="/lawyer_delete/{{lawyer.email}}" onclick="return confirm('you really want to delete?');">delete</a> </th>
+         </tr>
+
+         </tbody>
+     </table>
+<br>
+ {% include 'lawyer_footer.html' %}

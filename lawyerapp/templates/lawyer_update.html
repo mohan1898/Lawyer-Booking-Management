@@ -1,0 +1,161 @@
+{% include 'lawyer_header.html'%}
+{% load static %}
+
+
+ <body>
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	     <div class="container">
+	      <a class="navbar-brand" href="{% url 'lawyer_home' %}" style="font-size:30px">Lawyer Booking System</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="{% url 'lawyer_home' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="{% url 'lawyer_details' %}" class="nav-link">Lawyer Details</a></li>
+				<li class="nav-item"><a href="{% url 'client_feedback' %}" class="nav-link">Client Feedback</a></li>
+				<li class="nav-item"><a href="{% url 'lawyer_change_password' %}" class="nav-link">Change Password</a></li>
+	          <li class="nav-item"><a href="{% url 'lawyer_logout' %}" class="nav-link">logout</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+ </body>
+	  <section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/bg_5.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate mb-5 text-center">
+          	<p class="breadcrumbs mb-0"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span>Lawyer <span><i class="fa fa-chevron-right"></i></span></p>
+            <h1 class="mb-0 bread">Lawyer update profile</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+	  <div class="row no-gutters">
+								<div class="col-md-7">
+									<div class="contact-wrap w-100 p-md-5 p-4">
+										<h3 class="mb-4">Lawyer update profile</h3>
+										<form method="POST" action="{% url 'lawyer_update' %}" id="contactForm" name="contactForm" class="contactForm" enctype="multipart/form-data">
+											<div class="row">
+												{% csrf_token %}
+												<div class="col-md-8">
+<!--													<div class="form-group">-->
+<!--														<label class="label" for="id">Lawyer id</label>-->
+<!--														<input type="number" class="form-control" name="id" value="{{lawyer.id}}" id="id" placeholder="id" readonly>-->
+<!--													</div>-->
+												</div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="label" for="suffix"></label>
+														 <select name="suffix" id="suffix">
+															<option value="Mr.">Mr.</option>
+															<option value="Ms.">Ms.</option>
+															<option value="Dr.">Dr.</option>
+															<option value="Mrs.">Mrs.</option>
+															<option value="Miss.">Miss.</option>
+														  </select>
+														 </div>
+													</div>
+													<div class="col-md-8">
+													<div class="form-group">
+														<label class="label" for="name">Full Name</label>
+														<input type="text" class="form-control" name="full_name" value="{{lawyer.full_name}}" id="name" placeholder="Name">
+													</div>
+												</div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="label" for="email">Email </label>
+														<input type="email" class="form-control" name="email" value="{{lawyer.email}}" id="email" placeholder="Email">
+													</div>
+												</div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="label" for="password">Password</label>
+														<input type="password" class="form-control" name="password" id="password"  value="{{lawyer.password}}" placeholder="Password" readonly/>
+													</div>
+												</div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="label" for="mobile">mobile </label>
+														<input type="number" class="form-control" name="mobile" id="mobile" value="{{lawyer.mobile}}" placeholder="Mobile">
+													</div>
+												</div>
+
+												<div class="col-md-12">
+													<div class="col-md-8">
+													<div class="form-group">
+														<label class="label" for="city">City </label>
+														 <select name="city" id="city">
+														   <option  value="">Select city</option>
+														  <option  value="Ahemdabad">Ahemdabad</option>
+														  <option value="Bangalore">Bangalore</option>
+															 <option  value="Bhopal">Bhopal</option>
+														  <option  value="Chennai">Chennai</option>
+														  <option  value="Delhi">Delhi</option>
+														  <option value="Hyderabad">Hyderabad</option>
+														  <option value="Kerala">Kerala</option>
+														  <option value="Kolkata">Kolkata</option>
+														  <option value="Mumbai">Mumbai</option>
+															<option value="Pune">Pune</option>
+															<option value="Telangana">Telangana</option>
+														  </select>
+													</div>
+													</div>
+												</div>
+
+												<div class="col-md-12">
+													<div class="col-md-8">
+													<div class="form-group">
+														<label class="label" for="Specialization">Specialization: </label>
+														 <select name="specialization" id="Specialization">
+														  <option  value="">Select Specialization</option>
+														  <option value="Family Law">Family Law</option>
+														  <option value="Criminal Law">Criminal Law</option>
+														  <option value="Banking and Finance Law">Banking and Finance Law</option>
+															<option value="Corporate Law">Corporate Law</option>
+															<option value="Employment and Labor Law">Employment and Labor Law</option>
+															<option value="Tort Law">Tort Law</option>
+															<option value="Real Estate Law">Real Estate Law</option>
+														  </select>
+													</div>
+												</div>
+                                            </div>
+												</div>
+                                            <div class="col-md-8">
+													<div class="form-group">
+														<label class="label" for="experience">experience: </label>
+                                                        <textarea  class="form-control" name="experience" id="experience" placeholder="experience">{{lawyer.experience}}</textarea>
+													</div>
+												</div>
+
+                                            <div class="col-md-8">
+													<div class="form-group">
+														<label class="label" for="current">currently working as: </label>
+                                                        <textarea  class="form-control" name="current" id="current" placeholder="currently working as">{{lawyer.current}}</textarea>
+													</div>
+												</div>
+                                            <div class="col-md-8">
+													<div class="form-group">
+														<label class="label" for="photo">Photo: </label>
+                                                        <input type="file" id="photo" value="{{lawyer.image}}" name="image">
+													</div>
+												</div>
+
+												<div class="col-md-12">
+													<div class="form-group">
+														<input type="submit" value="update" class="btn btn-primary">
+														<div class="submitting"></div>
+														{{msg}}
+													</div>
+												</div>
+										</form>
+									</div>
+								</div>
+
+							</div>
+
+ {% include 'lawyer_footer.html' %}
