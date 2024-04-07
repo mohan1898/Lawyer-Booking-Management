@@ -10,8 +10,8 @@ from lawyerapp.forms import LawyerForm
 # Create your views here.
 
 def index(request):
-    feedback = Feedback.objects.all()
-    return render(request, "index.html", {"feedback": feedback})
+    feedback_item = Feedback.objects.all()
+    return render(request, "index.html", {"feedback": feedback_item})
 
 
 def about(request):
