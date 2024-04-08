@@ -1,95 +1,222 @@
 {% include 'header.html' %}
 {% load static %}
 
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/" style="font-size:30px">Lawyer Booking System</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="oi oi-menu"></span> Menu
-    </button>
 
-    <div class="collapse navbar-collapse" id="ftco-nav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="{% url 'admin:index' %}" class="nav-link">Admin</a></li>
-        <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
-        <li class="nav-item"><a href="{% url 'lawyer_login' %}" class="nav-link">Lawyer</a></li>
-        <li class="nav-item"><a href="{% url 'client_login' %}" class="nav-link">Client</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- END nav -->
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="/" style="font-size:30px">Lawyer Booking System</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
 
-<div class="hero-wrap" style="background-image: url({% static 'images/bg_1.jpg' %});" data-stellar-background-ratio="0.5">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row no-gutters slider-text align-items-center">
-      <div class="col-md-6 ftco-animate d-flex align-items-end">
-        <div class="text w-100">
-          <h1 class="mb-4">Don't Feel Helpless We Fight for Justice</h1>
-          <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-          <p><a href="{% url 'contact' %}" class="btn btn-primary py-3 px-4">Contact us</a> <a href="{% url 'about' %}" class="btn btn-white py-3 px-4">Read more</a></p>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+				<li class="nav-item"><a href="http://127.0.0.1:8000/admin/login/?next=/admin/" class="nav-link">Admin</a></li>
+	          <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+	          <li class="nav-item"><a href="{% url 'lawyer_login' %}" class="nav-link">Lawyer</a></li>
+	          <li class="nav-item"><a href="{% url 'client_login' %}" class="nav-link">Client</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    
+    <div class="hero-wrap" style="background-image: url("{% static 'images/bg_1.jpg' %}"); data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center">
+          <div class="col-md-6 ftco-animate d-flex align-items-end">
+          	<div class="text w-100">
+	            <h1 class="mb-4">Don't Feel Helpless We Fight for Justice</h1>
+	            <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+	            <p><a href="{% url 'contact' %}" class="btn btn-primary py-3 px-4">Contact us</a> <a href="{% url 'about' %}" class="btn btn-white py-3 px-4">Read more</a></p>
+            </div>
+          </div>
+          <a href="{% static 'video.mp4' %}" class="img-video popup-vimeo d-flex align-items-center justify-content-center">
+          	<span class="fa fa-play"></span>
+          </a>
         </div>
       </div>
-      <a href="{% static 'video.mp4' %}" class="img-video popup-vimeo d-flex align-items-center justify-content-center">
-        <span class="fa fa-play"></span>
-      </a>
     </div>
-  </div>
-</div>
 
-<section class="ftco-intro">
-  <div class="container-fluid">
-    <!-- Your content for ftco-intro section -->
-  </div>
-</section>
+    <section class="ftco-intro">
+    	<div class="container-fluid">
+    		<div class="row no-gutters">
+    			<div class="col-md-3 d-flex">
+    				<div class="intro aside-stretch d-lg-flex w-100">
+    					<div class="icon">
+    						<span class="flaticon-lawyer"></span>
+    					</div>
+    					<div class="text">
+    						<h2>Expert Lawyers</h2>
+    						<p>Lawyer's main duties are to uphold the law while protecting a client's rights.</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-3 d-flex">
+    				<div class="intro color-1 d-lg-flex w-100">
+    					<div class="icon">
+    						<span class="flaticon-auction"></span>
+    					</div>
+    					<div class="text">
+    						<h2>Case Dismissed</h2>
+    						<p>When a judge dismisses a case against someone, he or she formally states that there is no need for a trial, usually because there is not enough evidence for the case to continue.</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-3 d-flex">
+    				<div class="intro color-2 d-lg-flex w-100">
+    					<div class="icon">
+    						<span class="flaticon-court"></span>
+    					</div>
+    					<div class="text">
+    						<h2>Court Performance</h2>
+    						<p>A judicial performance evaluation commission reviews the surveys and writes a summary of the findings, rating how well judges perform their responsibilities and whether or not judges are recommended for retention.</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-3 d-flex">
+    				<div class="intro color-3 d-lg-flex w-100">
+    					<div class="icon">
+    						<span class="flaticon-court"></span>
+    					</div>
+    					<div class="text">
+    						<h2>Business Law</h2>
+    						<p>Business law is the body of law governing the rights, relations, and conduct of persons, companies, organizations and businesses.</p>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
 
-<section class="ftco-section">
-  <div class="container">
-    <!-- Your content for ftco-section -->
-  </div>
-</section>
+    </section>
 
-<section class="ftco-section testimony-section">
-  <div class="img img-bg" style="background-image: url({% static 'images/bg_4.jpg'%});"></div>
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row justify-content-center mb-5">
-      <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-        <span class="subheading">Testimonial</span>
-        <h2 class="mb-3">Happy Clients</h2>
-      </div>
-    </div>
-    <div class="row ftco-animate">
-      <div class="col-md-12">
-        <div class="carousel-testimony owl-carousel ftco-owl">
-          {% for feedback_item in feedback %}
-          <div class="item">
-            <div class="testimony-wrap py-4">
-              <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-              <div class="text">
-                <p class="mb-4">{{ feedback_item.description }}</p>
-                <div class="d-flex align-items-center">
-                  <div class="user-img" style="background-image: url({% static 'images/person_1.jpg' %})"></div>
-                  <div class="pl-3">
-                    TO:
-                    <p class="name">{{ feedback_item.lawyer_id }}</p>
-                    FROM:
-                    <span class="name">{{ feedback_item.client_id }}</span>
+
+
+
+		<section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center pb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+          	<span class="subheading">Practice Area</span>
+            <h2>What We Cover</h2>
+          </div>
+        </div>
+    		<div class="row">
+    			<div class="col-md-4 d-flex align-items-stretch ftco-animate">
+    				<div class="services-2 text-center">
+    					<div class="icon-wrap">
+    						<div class="mini-icon d-flex align-items-center justify-content-center"><span class="flaticon-stats"></span></div>
+	    					<div class="icon d-flex align-items-center justify-content-center">
+	    						<span class="flaticon-stats"></span>
+	    					</div>
+    					</div>
+    					<h2>Business Law</h2>
+    					<p>Business law is the body of law governing the rights, relations, and conduct of persons, companies, organizations and businesses.</p>
+    				</div>
+    			</div>
+    			<div class="col-md-4 d-flex align-items-stretch ftco-animate">
+    				<div class="services-2 text-center">
+    					<div class="icon-wrap">
+    						<div class="mini-icon d-flex align-items-center justify-content-center"><span class="flaticon-family"></span></div>
+	    					<div class="icon d-flex align-items-center justify-content-center">
+	    						<span class="flaticon-family"></span>
+	    					</div>
+    					</div>
+    					<h2>Family Law</h2>
+  						<p>family law, body of law regulating family relationships, including marriage and divorce, the treatment of children, and related economic matters.</p>
+    				</div>
+    			</div>
+    			<div class="col-md-4 d-flex align-items-stretch ftco-animate">
+    				<div class="services-2 text-center">
+    					<div class="icon-wrap">
+    						<div class="mini-icon d-flex align-items-center justify-content-center"><span class="flaticon-handcuffs"></span></div>
+	    					<div class="icon d-flex align-items-center justify-content-center">
+	    						<span class="flaticon-handcuffs"></span>
+	    					</div>
+    					</div>
+    					<h2>Criminal Law</h2>
+  						<p>Criminal Law deals with offences that are committed against the society. It mets out varying degrees of punishment commensurate with the crime committed. </p>
+    				</div>
+    			</div>
+    			<div class="col-md-4 d-flex align-items-stretch ftco-animate">
+    				<div class="services-2 text-center">
+    					<div class="icon-wrap">
+    						<div class="mini-icon d-flex align-items-center justify-content-center"><span class="flaticon-stay-home"></span></div>
+	    					<div class="icon d-flex align-items-center justify-content-center">
+	    						<span class="flaticon-stay-home"></span>
+	    					</div>
+    					</div>
+    					<h2>Real Estate Law</h2>
+    					<p>Real estate in India is governed and impacted by a combination of Federal (Central) and State-specific laws.</p>
+    				</div>
+    			</div>
+    			<div class="col-md-4 d-flex align-items-stretch ftco-animate">
+    				<div class="services-2 text-center">
+    					<div class="icon-wrap">
+    						<div class="mini-icon d-flex align-items-center justify-content-center"><span class="flaticon-injury"></span></div>
+	    					<div class="icon d-flex align-items-center justify-content-center">
+	    						<span class="flaticon-injury"></span>
+	    					</div>
+    					</div>
+    					<h2>Personal Injury</h2>
+  						<p>An Act to impose on employers a liability to pay compensation to workmen sustaining personal injuries and to provide for the insurance of employers against such liability.</p>
+    				</div>
+    			</div>
+    			<div class="col-md-4 d-flex align-items-stretch ftco-animate">
+    				<div class="services-2 text-center">
+    					<div class="icon-wrap">
+    						<div class="mini-icon d-flex align-items-center justify-content-center"><span class="flaticon-auction"></span></div>
+	    					<div class="icon d-flex align-items-center justify-content-center">
+	    						<span class="flaticon-auction"></span>
+	    					</div>
+    					</div>
+    					<h2>Judicial Law</h2>
+  						<p>This system of stare decisis is sometimes referred to as “judge-made law,” as the law (the precedent) is created by the judge, not by a legislature.</p>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+
+    <section class="ftco-section testimony-section">
+    	<div class="img img-bg" style="background-image: url("{% static 'images/bg_4.jpg'%}");"></div>
+    	<div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+          	<span class="subheading">Testimonial</span>
+            <h2 class="mb-3">Happy Clients</h2>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+				{% for fedd in feedback %}
+              <div class="item">
+                <div class="testimony-wrap py-4">
+					<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                    <p class="mb-4">{{fedd.description}}</p>
+                    <div class="d-flex align-items-center">
+                    	<div class="user-img" style="background-image: url("{% static 'images/person_1.jpg' %}")></div>
+                    	<div class="pl-3">
+							TO:
+		                    <p class="name">{{fedd.lawyer_id}}</p>
+							FROM:
+		                    <span class="name">{{fedd.client_id}}</span>
+		                  </div>
+	                  </div>
                   </div>
                 </div>
               </div>
+				{% endfor %}
             </div>
           </div>
-          {% endfor %}
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 {% include 'footer.html' %}
-</body>
-</html>
