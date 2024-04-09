@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
-import dj_database_url
+import dj_database_url # type: ignore
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR=os.path.join(BASE_DIR, 'templates')
@@ -144,5 +144,3 @@ MEDIA_URL = '/media/'
 # Path where media is stored
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-import django_heroku
-django_heroku.settings(locals())
