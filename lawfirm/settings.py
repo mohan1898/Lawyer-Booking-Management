@@ -20,12 +20,12 @@ TEMPLATE_DIR=os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--p0z(*wr)tfqs8i59suw7*6y2w3p@(n)onqb^984+!2aj*l3$$'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG","FALSE").lower == "true"
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -92,7 +92,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-DATABASES["default"]=dj_database_url.parse("postgres://flask_portfolio_user:K70HoQYvjzV30bKA2ItO3sYEwZj8CsaJ@dpg-co8jqe8l5elc739040mg-a.oregon-postgres.render.com/flask_portfolio")
+database_url=os.environ.get("DATABASE_URL")
+DATABASES["default"]=dj_database_url.parse(database_url)
 # postgres://flask_portfolio_user:K70HoQYvjzV30bKA2ItO3sYEwZj8CsaJ@dpg-co8jqe8l5elc739040mg-a.oregon-postgres.render.com/flask_portfolio
 # DATABASES ={
 #     "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
