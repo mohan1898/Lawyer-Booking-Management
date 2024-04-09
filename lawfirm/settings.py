@@ -86,17 +86,17 @@ WSGI_APPLICATION = 'lawfirm.wsgi.application'
 #         'PORT': '3307',
 #     }
 # }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-DATABASES ={
-    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+DATABASES["default"]=dj_database_url.parse("postgres://flask_portfolio_user:K70HoQYvjzV30bKA2ItO3sYEwZj8CsaJ@dpg-co8jqe8l5elc739040mg-a.oregon-postgres.render.com/flask_portfolio")
+# postgres://flask_portfolio_user:K70HoQYvjzV30bKA2ItO3sYEwZj8CsaJ@dpg-co8jqe8l5elc739040mg-a.oregon-postgres.render.com/flask_portfolio
+# DATABASES ={
+#     "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
